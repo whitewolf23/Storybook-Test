@@ -11,6 +11,7 @@ export const task = {
     state : 'TASK_INBOX',
     updateAt: new Date(2019, 0, 1, 9, 0)
 };
+
 // 액션 작성 
 export const actions = {
     onPinTask: action('onPinTask'),
@@ -18,8 +19,8 @@ export const actions = {
 };
 
 // 1. 스토리에 모듈을 추가해서 시나리오들을 테스트 하는것 같다.
-storiesOf('Task', module)
-    .add('default', () => <Task task={task} {...actions} /> )
-    .add('pinned', () => <Task task={{...task, state: 'TASK_PINNED'}} {...actions} />)
-    .add('archived', () => <Task task={{...task, state: 'TASK_ARCHIVED'}} {...actions} />)
+// storiesOf('Task', module)
+//     .add('default', () => <Task task={task} {...actions} /> )
+//     .add('pinned', () => <Task task={{...task, state: 'TASK_PINNED'}} {...actions} />)
+//     .add('archived', () => <Task task={{...task, state: 'TASK_ARCHIVED'}} {...actions} />)
 

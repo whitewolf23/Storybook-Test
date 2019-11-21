@@ -47,7 +47,7 @@ const TaskItem = ({
     console.table(task)
     // UI 설계
     return (
-        <div className="TaskItem-container" onClick={onArchive}>
+        <div className={'TaskItem-container'} onClick={onArchive}>
             <div className="TaskItem">
                 {/* 획득 */}
                 <div className="TaskItem-content">

@@ -2,75 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FaRegStar, FaStar, FaRegTrashAlt } from 'react-icons/fa'; // react-icons 개발 시 엄청 좋은 듯
-
-
-const TaskItemContainer = styled.div`
-    cursor: pointer;
-    padding: 1rem;
-    border-bottom: 1px solid #737373;
-
-    & * {
-    user-select: none;
-    color: #fafafafa;
-    font-size: 0.9rem;
-    }
-`;
-
-const TaskItem1 = styled.div`
-    display: flex;
-    flex-direction: row;
-`;
-
-const TaskItemContent = styled.div`
-    flex: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-`;
-
-const TaskItemContentFin = styled.span`
-    text-decoration: line-through;
-`;
-
-const TaskItemContentFinIcon = styled.span`
-    margin: 0 0.8rem;
-    padding: 0.3rem;
-    border-radius: 8px;
-    background-color: #15859e;
-    color: #fff;
-`;
-
-const TaskItemPin = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`;
-
-const TaskItemPinIconDone = styled.div`
-    margin-right: 1rem;
-    color: #45cae7;
-
-    & * {
-    color: #45cae7;
-    }
-`;
-
-const TaskItemPinIcon = styled.div`
-    margin-right: 1rem;
-`;
-
-const TaskItemRemove = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-        & * {
-            color: tomato;
-        }
-    }
-`;
-
+import './TaskItem.scss';
 
 /**
  *
@@ -103,8 +35,8 @@ const TaskItem = ({
     }
 
     const onPin = (e) => {
-        onPinTask(); // props
-        e.stopPropagation(); 
+        onArchiveTask(); // props
+        e.onPinTask();
     }
 
     const onRemove = (e) => {
@@ -116,38 +48,32 @@ const TaskItem = ({
     console.table(task)
     // UI 설계
     return (
-        <TaskItemContainer onClick={onArchive}>
-            <TaskItem1>
-                <TaskItemContent>
+        <div className="TaskItem-container" onClick={onArchive}>
+            <div className="TaskItem">
+                {/* 획득 */}
+                <div className="TaskItem-content">
                     { archive ? (
                         <div>
-                            <TaskItemContentFin>
-                                {content}
-                            </TaskItemContentFin>
-                            <TaskItemContentFinIcon>
-                                finished
-                            </TaskItemContentFinIcon>
+                            <span className="TaskItem-content-fin">{content}</span>
+                            <span className="TaskItem-content-fin-icon">Finish</span>
                         </div>
-                    ) : (<span>{content}</span>)}
-                </TaskItemContent>
+                    ) : (
+                        <span> {content} </span>
+                    )}
+                </div>
                     {/* 핀 */}
-                        <TaskItemPin onClick={onPin}>
-                            { pinned ? (
-                                <TaskItemPinIconDone>
-                                    <FaStar/>
-                                </TaskItemPinIconDone>
-                            ) : (
-                                <TaskItemPinIcon>
-                                    <FaRegStar/>
-                                </TaskItemPinIcon>
-                            )}
-                        </TaskItemPin>
+                <div className="TaskItem-pin" onClick={onPin} >
+                    { pinned ?
+                        <FaStar className="TaskItem-pin-iconDone" /> :
+                        <FaRegStar className="TaskItem-pin-icon" />
+                    }
+                </div>
                     {/* 지우기 */}
-                    <TaskItemRemove onClick={onRemove}>
-                        <FaRegTrashAlt />
-                    </TaskItemRemove>           
-            </TaskItem1>
-        </TaskItemContainer>
+                <div className="TaskItem-remove" onClick={onRemove} >
+                    <FaRegTrashAlt className="TaskItem-remove-icon" />
+                </div>
+            </div>
+        </div>
     )
 }
 
