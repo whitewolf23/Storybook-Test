@@ -63,8 +63,8 @@ class TestVideo extends Component {
                     contorls={true} // 컨트롤 바 생성
                     src={video.src} // 비디오 소스
                     poster={video.poster} // 포스터
-                    width="720"
-                    height="420"
+                    width="640"
+                    height="380"
                     onReady={onReady} // 
                     onPlay={onPlay}
                     onPause={onPause}
