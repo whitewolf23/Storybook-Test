@@ -45,7 +45,7 @@ const TaskItem = ({
     }
 
     // console.log({task})
-    console.table(task)
+    // console.table(task)
     // UI 설계
     return (
         <div className="TaskItem-container" onClick={onArchive}>
