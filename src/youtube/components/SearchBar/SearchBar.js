@@ -13,10 +13,14 @@ export default class SearchBar extends Component {
     }
 
     onInputChange = (e) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
+        const {keyword} = this.state;
+        const {onChange} = this.props;
+        
         this.setState({
             keyword : e.target.value
         })
+        onChange(keyword)
     }
 
     render() {

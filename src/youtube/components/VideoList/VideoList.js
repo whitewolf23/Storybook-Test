@@ -2,18 +2,18 @@ import React from 'react'
 import {VideoItem} from 'youtube/components/VideoItem'
 import './VideoList.scss'
 
-export default function VideoList({videos}) {
-
-
+export default function VideoList({videos, onVideoSelect}) {
+     if (!videos) {
+    return <div>Loading...</div>;
+  }
     // 데이터 map 배열로 만들어주기 
     const videoItems = videos.map((video) => {
-        const {id, url, thumbnail, title} = video;
+        const {id} = video;
         return (
             <VideoItem 
-                key={id} 
-                url={url} 
-                thumbnail={thumbnail}
-                title={title}    
+                key={id}  
+                video={video}
+                onVideoSelect={onVideoSelect}
             />
         )
     })

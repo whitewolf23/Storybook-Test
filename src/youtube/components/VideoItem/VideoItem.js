@@ -1,9 +1,12 @@
 import React from 'react'
 import './VideoItem.scss'
 
-export default function VideoItem({url, thumbnail, title}) {
+
+export default function VideoItem({video, onVideoSelect}) {
+    // console.log('videoitem', video)
+    const {url, thumbnail, title} = video
     return (
-        <li className="list-group-item">
+        <li className="list-group-item" onClick={() => { onVideoSelect(video) }} >
             <div className="video-list media">
                 {/* 이미지, 왼쪽 배치 */}
                 <div className="media-left">
@@ -15,7 +18,10 @@ export default function VideoItem({url, thumbnail, title}) {
                     </div>
                 </div>
             </div>
-            {url}
+            {/* {url} */}
         </li>
     )
 }
+
+// onClick={() => { onVideoSelect(video) }}
+// onClick={onVideoSelect}
