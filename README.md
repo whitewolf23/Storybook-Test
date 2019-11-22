@@ -8,7 +8,9 @@
 * react youtube clone 을 참고하여 playlist 작성
 * inline 함수를 이용하면, 리렌더링 될때마다 새 함수가 만들어 지기 때문에 성능 저하 발생 -> 필요할 때가 이니면 되도록 회피 
 
-* playlist 클릭 -> 비디오플레이어가 update 되는 부분 난항 .
+* playlist 클릭 -> 비디오플레이어가 update 되는 부분 난항 . -> react-video-js-player 라이브러리 오류 
+
+참고 : https://github.com/karan101292/react-video-js-player/commit/b17ee4aa71cbbda2f7c0af9bd425c899dc4254cc
 
 ## 2019 11 21 (목)
 * 클래스 컴포넌트를 이용한 이벤트 바인딩과 state 초기화관련 이슈 공부 
