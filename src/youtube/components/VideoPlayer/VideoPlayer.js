@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import HLSPlayer from 'react-video-js-player';
+// import HLSPlayer from 'react-video-js-player';
 import ReactPlayer from 'react-player'
-
+import './VideoPlayer.scss'
 export default class VideoPlayer extends Component {
    
     constructor(props) {
@@ -13,9 +13,7 @@ export default class VideoPlayer extends Component {
        
     render() {
         const {selectedVideo} = this.props;
-        
-        console.table('selectedVideo', selectedVideo)
-        
+                
         return (
             <div>   
             { !selectedVideo ? (<div>
@@ -27,8 +25,8 @@ export default class VideoPlayer extends Component {
                         <ReactPlayer url={selectedVideo.url} playing controls />
                     </div>
                     <div className="details">
-                        <div>디테일</div>
-                        <div>디테일</div>
+                        <div>{selectedVideo.title}</div>
+                        <div>{selectedVideo.url}</div>
 
                     </div>
                 </div>

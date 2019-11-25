@@ -36,20 +36,27 @@ class App extends Component {
           thumbnail : 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Canis_lupus_occidentalis.jpg/250px-Canis_lupus_occidentalis.jpg',
           title: '제이미맨',
           url: 'https://dcymer9183hvu.cloudfront.net/test/mp4/73f3e7b_t34.mp4',
-        }
+        },
+        {
+          id: 3,
+          thumbnail : 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Canis_lupus_occidentalis.jpg/250px-Canis_lupus_occidentalis.jpg',
+          title: '주예지',
+          url: ' https://www.youtube.com/watch?v=NsVjcT0kRiU',
+        },// 선택된 비디오 데이터
       ], // Video list data
-      selectedVideo:null,// 선택된 비디오 데이터
+      selectedVideo:{
+        id: 3,
+        thumbnail : 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Canis_lupus_occidentalis.jpg/250px-Canis_lupus_occidentalis.jpg',
+        title: '주예지',
+        url: ' https://www.youtube.com/watch?v=NsVjcT0kRiU',
+      },// 선택된 비디오 데이터
     }
-
+   
     this.searchVideo = this.searchVideo.bind(this)
     this.handleSelectedVideoUpdate = this.handleSelectedVideoUpdate.bind(this)
 
   }
 
-
-  componentDidMount() {
-    this.setState({ ...this.state, selectedVideo: null });
-  }
 
   handleKeywordUpdate = (keyword) => {
     this.setState({
@@ -62,7 +69,7 @@ class App extends Component {
   handleSelectedVideoUpdate = (value) => {
     // console.log('work!!!', value)
     this.setState({
-      selectedVideo : value 
+      selectedVideo : value || this.searchVideo
     });
     console.log('변경된 값', this.state.selectedVideo) 
   }
