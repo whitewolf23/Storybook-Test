@@ -92,7 +92,7 @@ class App extends Component {
      
     return (
       <div>
-        <NavBar siteTitle='데모페이지' />
+        <NavBar siteTitle='poppy tube' />
         <div className="container">
           <SearchBar 
             onChange={this.searchVideo} />

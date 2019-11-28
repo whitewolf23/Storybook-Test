@@ -1361,6 +1361,13 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@mayankmohit/react-gif-player@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@mayankmohit/react-gif-player/-/react-gif-player-0.4.2.tgz#7dc58919213d4f2e96d0bf96d371ddf70ae64ff8"
+  integrity sha512-Kzh2BOsZrH+519bpR60zJaERFpLcuis1NkilhseYGJYmR0uy8FDPIxXhFQKgToiMPU9hrjsl95QbtiWnWUhg5A==
+  dependencies:
+    prop-types "^15.6.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
