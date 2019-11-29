@@ -4,6 +4,10 @@
 
 # 업데이트 
 
+## 2019 11 29 (금)
+* Arrow function 일 때, bind 은 필요치 않음 -> 수정 
+* Search bar Comopnent 에 keyword state 중복 수정 
+
 ## 2019 11 22 (금)
 * react youtube clone 을 참고하여 playlist 작성
 * inline 함수를 이용하면, 리렌더링 될때마다 새 함수가 만들어 지기 때문에 성능 저하 발생 -> 필요할 때가 이니면 되도록 회피 
