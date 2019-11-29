@@ -10447,6 +10447,11 @@ react-icons@^3.8.0:
   dependencies:
     camelcase "^5.0.0"
 
+react-infinite-scroll-hook@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-infinite-scroll-hook/-/react-infinite-scroll-hook-2.0.0.tgz#5f4ef953a4f678d1b2c2fe3ae07af0c04b27b285"
+  integrity sha512-SdPbbTJ3AGDMjHkbgZ/pfQ22PSuZE8IJBH7fo0sqRNnTkMfFQe8bNB/vqLVrkUrIHPv2jfoknBb3Kag7SXubDQ==
+
 react-inspector@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-3.0.2.tgz#c530a06101f562475537e47df428e1d7aff16ed8"

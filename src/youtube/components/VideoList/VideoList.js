@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import {VideoItem} from 'youtube/components/VideoItem';
+import {InfiniteList} from 'youtube/components/InfiniteList'
 
 import './VideoList.scss'
 
 export default function VideoList({videos, onVideoSelect}) {
+    const [scrollParent, setScrollParent] = useState(false);
+
     if (!videos) {
         return <div>Loading...</div>;
     }
@@ -20,10 +23,12 @@ export default function VideoList({videos, onVideoSelect}) {
         )
     })
 
+
     // videoitems를 return () 부분에 연결해주어야 반영이 됨.
     return (
         <ul className="col-md-4 list-group">
             {videoItems}
+            <InfiniteList scrollContainer ={scrollParent}/>
         </ul>
     )
 }

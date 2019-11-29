@@ -2,20 +2,12 @@ import React, { Component } from 'react'
 import './SearchBar.scss'
 export default class SearchBar extends Component {
 
-    constructor(props){
-        super(props);
-        // 검색어 설정
-        this.state = {
-            keyword: '' 
-        }
-
-        this.onInputChange = this.onInputChange.bind(this)
-    }
+   
+    // keyworkd status 중복 
 
     onInputChange = (e) => {
         // console.log(e.target.value)
-        const {keyword} = this.state;
-        const {onChange} = this.props;
+        const {onChange, keyword} = this.props;
         
         this.setState({
             keyword : e.target.value

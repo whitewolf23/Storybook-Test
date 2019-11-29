@@ -51,9 +51,6 @@ class App extends Component {
         url: ' https://www.youtube.com/watch?v=NsVjcT0kRiU',
       },// 선택된 비디오 데이터
     }
-   
-    this.searchVideo = this.searchVideo.bind(this)
-    this.handleSelectedVideoUpdate = this.handleSelectedVideoUpdate.bind(this)
 
   }
 
@@ -88,14 +85,14 @@ class App extends Component {
   render() {
     // json 객체 받아옴
     // console.log(test)
-    const {videos, selectedVideo} = this.state;
+    const {videos, selectedVideo, keyword} = this.state;
      
     return (
       <div>
         <NavBar siteTitle='poppy tube' />
         <div className="container">
           <SearchBar 
-            onChange={this.searchVideo} />
+            onChange={this.searchVideo} keyword={keyword}/>
           <VideoPlayer 
             selectedVideo={selectedVideo}/>
           <VideoList 
