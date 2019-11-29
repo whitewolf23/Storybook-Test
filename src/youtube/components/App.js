@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
-// import { Link } from 'react-router-dom';
-// 리스트
-// 아이템
-// 비디오 플레이어
-// 네비게이션 바
 import {NavBar} from 'youtube/components/NavBar'
 import {SearchBar} from 'youtube/components/SearchBar'
 import {VideoPlayer} from 'youtube/components/VideoPlayer'
 import {VideoList} from 'youtube/components/VideoList'
-import test from './test.json';
+// import test from './test.json';
 
 class App extends Component {
 
@@ -17,7 +12,7 @@ class App extends Component {
 
     // 초기 state
     this.state = {
-      keyword:null,
+      keyword:'',
       videos:[
         {
           id: 0,
@@ -54,37 +49,24 @@ class App extends Component {
 
   }
 
-
   handleKeywordUpdate = (keyword) => {
     this.setState({
       keyword: keyword
     })
-    console.log('keyword', this.state.keyword)
-
   }
 
   handleSelectedVideoUpdate = (value) => {
-    // console.log('work!!!', value)
     this.setState({
       selectedVideo : value || this.searchVideo
     });
-    console.log('변경된 값', this.state.selectedVideo) 
   }
 
   searchVideo = (keyword) => {
-    // this.setState({
-    //   videos: testList, // 비디오 데이터 array
-    //   selectedVideo : testList[1]
-    // })
-    // if 검색어가 변한다면, state 가 변경된다. 
-    // console.log(this.state.videos, this.state.selectedVideo)
     this.handleKeywordUpdate(keyword)
   }
   
   // props 전달 시, '' 만 가능
   render() {
-    // json 객체 받아옴
-    // console.log(test)
     const {videos, selectedVideo, keyword} = this.state;
      
     return (
@@ -96,10 +78,8 @@ class App extends Component {
           <VideoPlayer 
             selectedVideo={selectedVideo}/>
           <VideoList 
-            // onVideoSelect={(selectedVideo) => {this.setState({selectedVideo})}}
             onVideoSelect={this.handleSelectedVideoUpdate}
             videos={videos} />
-          {/* <VideoList videos={testList} /> */}
         </div>
       </div>
      );

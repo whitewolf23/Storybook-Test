@@ -6,17 +6,12 @@ export default class SearchBar extends Component {
     // keyworkd status 중복 
 
     onInputChange = (e) => {
-        // console.log(e.target.value)
-        const {onChange, keyword} = this.props;
-        
-        this.setState({
-            keyword : e.target.value
-        })
-        onChange(keyword)
+        const {onChange} = this.props;
+        onChange(e.target.value)
     }
 
     render() {
-        const {keyword} = this.state
+        const { keyword} = this.props;
 
         return (
             <div className="search-bar">
